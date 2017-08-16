@@ -1,0 +1,11 @@
+{
+  "MailSettings": {
+    "ToAddress": "idilsulo@outlook.com"
+  },
+  "ConnectionStrings": {
+    "WorldContextConnection": "Server=(localdb)\\MSSQLLocalDb;Database=TheWorldDB;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  },
+  "Keys": {
+    "BingKey": "DONTEVERPUTKEYSINSOURCECONTROL"
+  }
+}
