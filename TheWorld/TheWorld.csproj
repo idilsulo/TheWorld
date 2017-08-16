@@ -8,7 +8,9 @@
     <Content Include="wwwroot\.bowerrc" />
     <Content Include="wwwroot\css\site.css" />
     <Content Include="wwwroot\img\1.jpg" />
+    <Content Include="wwwroot\js\app-trips.js" />
     <Content Include="wwwroot\js\site.js" />
+    <Content Include="wwwroot\js\tripsController.js" />
   </ItemGroup>
 
   <ItemGroup>
