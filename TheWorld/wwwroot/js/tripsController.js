@@ -8,10 +8,26 @@
     angular.module("app-trips")
         .controller("tripsController", tripsController);
 
-    function tripsController() {
+    function tripsController($http) {
 
         var vm = this;
-        vm.name = "Shawn";
+
+        vm.trips = []; 
+
+        vm.newTrip = {};
+
+        $http.get("/api/trips")
+            .then(function (response) {
+                // Success
+                angular.copy(response.data, vm.trips);
+            }, function () {
+                //Failure
+            });
+
+        vm.AddTrip = function () {
+            vm.trips.push({ name: vm.newTrip.name, created: new Date() });
+            vm.newTrip = {};
+        };
     }
 
 
