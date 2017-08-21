@@ -9,8 +9,10 @@
     <Content Include="wwwroot\css\site.css" />
     <Content Include="wwwroot\img\1.jpg" />
     <Content Include="wwwroot\js\app-trips.js" />
+    <Content Include="wwwroot\js\simpleControls.js" />
     <Content Include="wwwroot\js\site.js" />
     <Content Include="wwwroot\js\tripsController.js" />
+    <Content Include="wwwroot\views\waitCursor.html" />
   </ItemGroup>
 
   <ItemGroup>
