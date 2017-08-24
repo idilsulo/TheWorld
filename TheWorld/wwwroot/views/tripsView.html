@@ -4,7 +4,7 @@
     <table class="table table-responsive table-striped">
         <tr ng-repeat="trip in vm.trips">
             <td>{{ trip.name }}</td>
-            <td>{{ trip.created | date:'dd-MM-yyyy'}}</td>
+            <td>{{ trip.created | date:'MM-dd-yyyy' }}</td>
             <td><a ng-href="#/editor/{{ trip.name }}" class="btn btn-sm btn-primary">Manage</a></td>
         </tr>
     </table>
@@ -13,11 +13,14 @@
         <div class="form-group">
             <label for="name">Trip Name</label>
             <input class="form-control" type="text" id="name" name="name" ng-model="vm.newTrip.name" required ng-minlength="5" />
-            <span ng-show="newTripForm.name.$error.required" class="text-warning">Name is required</span>
-            <span ng-show="newTripForm.name.$error.minlength" class="">Must be at least 5 characters</span>
+            <span ng-show="newTripForm.name.$error.required" class="text-warning">Name is required.</span>
+            <span ng-show="newTripForm.name.$error.minlength" class="text-warning">Name must be at least five characters.</span>
         </div>
         <div class="form-group">
-            <input type="submit" value="Add" class="btn btn-success btn-sm" ng-disabled="newTripForm.$invalid" />
+            <input type="submit" value="Add"
+                   class="btn btn-success btn-sm"
+                   ng-disabled="newTripForm.$invalid" />
         </div>
     </form>
+
 </div>
