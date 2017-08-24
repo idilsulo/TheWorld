@@ -13,8 +13,6 @@ using TheWorld.ViewModels;
 
 namespace TheWorld.Controllers.Api
 {
-
-    [Authorize]
     [Route("/api/trips/{tripName}/stops")]
     public class StopsController : Controller
     {
@@ -37,7 +35,7 @@ namespace TheWorld.Controllers.Api
             {
                 var trip = _repository.GetUserTripByName(tripName, User.Identity.Name);
 
-                return Ok(Mapper.Map <IEnumerable<StopViewModel>>(trip.Stops.OrderBy(s => s.Order).ToList()));
+                return Ok(Mapper.Map<IEnumerable<StopViewModel>>(trip.Stops.OrderBy(s => s.Order).ToList()));
             }
             catch(Exception ex)
             {
@@ -69,16 +67,16 @@ namespace TheWorld.Controllers.Api
                     {
                         newStop.Latitude = result.Latitude;
                         newStop.Longitude = result.Longitude;
-                    }
 
-                    //Save to the Database
-                    _repository.AddStop(tripName, newStop, User.Identity.Name);
+                        //Save to the Database
+                        _repository.AddStop(tripName, newStop, User.Identity.Name);
 
-                    if(await _repository.SaveChangesAsync())
-                    {
-                        return Created($"/api/trips/{tripName}/stops/{newStop.Name}",
-                            Mapper.Map<StopViewModel>(newStop));
-                    }
+                        if (await _repository.SaveChangesAsync())
+                        {
+                            return Created($"/api/trips/{tripName}/stops/{newStop.Name}",
+                                Mapper.Map<StopViewModel>(newStop));
+                        }
+                    }              
                 }
             }
             catch(Exception ex)
