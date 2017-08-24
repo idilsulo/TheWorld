@@ -24,7 +24,6 @@ namespace TheWorld.Controllers.Web
             ILogger<AppController> logger)
         {
             _mailService = mailservice;
-            //_Service = service;
             _config = config;
             _repository = repository;
             _logger = logger;
@@ -40,11 +39,12 @@ namespace TheWorld.Controllers.Web
             try
             {
                 var data = _repository.GetAllTrips();
+
                 return View(data);
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to get trips in index page: {ex.Message}");
+                _logger.LogError($"Failed to get trips in Index page: {ex.Message}");
                 return Redirect("/error");
             }
         }

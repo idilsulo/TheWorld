@@ -29,7 +29,8 @@ namespace TheWorld.Controllers.Api
             _coordsService = coordService;
         }
 
-        [HttpGet("/api/trips/{tripName}/stops")]
+        //[HttpGet("/api/trips/{tripName}/stops")]
+        [HttpGet("")]
         public IActionResult Get(string tripName)
         {
             try

@@ -30,33 +30,23 @@ namespace TheWorld.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login (LoginViewModel vm, string returnUrl)
+        public async Task<ActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var signInResult = await _signInManager.PasswordSignInAsync(vm.Username,
-                                                                      vm.Password, 
-                                                                      true, false);
-
-                if (signInResult.Succeeded)
+                var signinResult = await _signInManager.PasswordSignInAsync(model.Username,
+                                                                            model.Password,
+                                                                            false, false);
+                if (signinResult.Succeeded)
                 {
-                    if (string.IsNullOrWhiteSpace(returnUrl))
-                    {
-                        return RedirectToAction("Trips", "App");
-                    }
-                    else
-                    {
-                        return Redirect(returnUrl);
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Username or password incorrect");
+                    return RedirectToAction("Trips", "App");
                 }
             }
 
-            return View();
+            // Just say Login failed on all errors
+            ModelState.AddModelError("", "Login Failed");
 
+            return View();
         }
 
         public async Task<ActionResult> Logout()
