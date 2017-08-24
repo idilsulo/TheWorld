@@ -1,8 +1,7 @@
-﻿//simpleControls.js
-
-(function (){
-
+﻿// simpleControls.js
+(function () {
     "use strict";
+
     angular.module("simpleControls", [])
         .directive("waitCursor", waitCursor);
 
