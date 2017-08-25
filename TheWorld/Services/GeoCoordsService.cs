@@ -27,7 +27,7 @@ namespace TheWorld.Services
             var result = new GeoCoordsResult()
             {
                 Success = false,
-                Message = "Failed to geet coordinates",
+                Message = "Failed to get coordinates",
 
             };
 
