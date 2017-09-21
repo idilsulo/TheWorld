@@ -8,6 +8,12 @@
     <Content Include="wwwroot\.bowerrc" />
     <Content Include="wwwroot\css\site.css" />
     <Content Include="wwwroot\img\1.jpg" />
+    <Content Include="wwwroot\img\screenshots\BekosTrips.jpg" />
+    <Content Include="wwwroot\img\screenshots\Contact Page.jpg" />
+    <Content Include="wwwroot\img\screenshots\Home Page.jpg" />
+    <Content Include="wwwroot\img\screenshots\Login Page.jpg" />
+    <Content Include="wwwroot\img\screenshots\Trips View.jpg" />
+    <Content Include="wwwroot\img\screenshots\US Trip.jpg" />
     <Content Include="wwwroot\js\app-trips.js" />
     <Content Include="wwwroot\js\simpleControls.js" />
     <Content Include="wwwroot\js\site.js" />
