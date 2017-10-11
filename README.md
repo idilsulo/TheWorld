@@ -29,7 +29,7 @@ Note that you can also view this page by clicking the "My Trips" section on the 
 
 <h2>Trip Page</h2>
 When you click one of the manage buttons listed in the Trips Page, you will see the details of that trip on a World Map. 
-This map is created by using the Bing Maps Key API. </br>
+This map is created by using the Bing Maps API. </br>
 
 See
 [here](https://www.bingmapsportal.com/)
